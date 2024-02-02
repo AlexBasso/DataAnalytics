@@ -41,3 +41,51 @@ def get_plot(x, y):
 
     graph = get_graph()
     return graph
+
+
+def get_plot2(x, y):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10, 2))
+    print('plot2 x:', x)
+    print('plot2 y:', y)
+    x.reverse()
+    y.reverse()
+    plt.barh(x, y, color='skyblue', height=0.5)
+
+    # Adding labels and title
+    plt.xlabel('Sum of Sales')
+    plt.ylabel('Product type')
+    plt.title('Average Sales by Item')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+
+    graph = get_graph()
+    return graph
+
+
+def get_plot3(sales_by_year_month):
+    plt.switch_backend('AGG')
+    plt.figure(figsize=(10, 2))
+    sales_by_year_month['year_month'] = sales_by_year_month['year'].astype(str) + '-' + sales_by_year_month[
+        'month'].astype(str)
+    print('sales_by_year_month after combining: \n', sales_by_year_month)
+
+    fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(12, 8))
+    fig.suptitle('Sales by Year and Month')
+
+    for idx, (year, group) in enumerate(sales_by_year_month.groupby('year')):
+        row = idx // 2
+        col = idx % 2
+
+        axs[row, col].plot(group['month'], group['sales'], label=str(year))
+        axs[row, col].set_title(f'Year {year}')
+        axs[row, col].set_xlabel('Month')
+        axs[row, col].set_ylabel('Sales')
+        axs[row, col].legend()
+
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
+    # plt.tight_layout()
+
+    graph = get_graph()
+
+    return graph

@@ -3,29 +3,23 @@
 {% block title %} main {% endblock title %}
 
 {% block content %}
-    <h1>Hello World</h1>
-    {{ df | safe }}
+<center>
+    <h1>Tableau & Pandas & MatPlotlib Demo</h1>
+    <br>
     <hr>
-    {{ describe | safe }}
-    <hr>
-    {% if chart %}
-    <img src="data:img/png;base64, {{chart|safe}}">
-    {% endif %}
-    <hr>
+    <h2>Tableau</h2>
 
-    <div class='tableauPlaceholder' id='viz1706873771720' style='position: relative'>
+    <div class='tableauPlaceholder' id='viz1706888262888' style='position: relative'>
         <noscript><a href='#'><img alt='Dashboard 1 '
-                                   src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Te&#47;Test_17068138507200&#47;Dashboard1&#47;1_rss.png'
+                                   src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GG&#47;GGBQW3DCP&#47;1_rss.png'
                                    style='border: none'/></a></noscript>
         <object class='tableauViz' style='display:none;'>
             <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
             <param name='embed_code_version' value='3'/>
-            <param name='site_root' value=''/>
-            <param name='name' value='Test_17068138507200&#47;Dashboard1'/>
-            <param name='tabs' value='no'/>
+            <param name='path' value='shared&#47;GGBQW3DCP'/>
             <param name='toolbar' value='yes'/>
             <param name='static_image'
-                   value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Te&#47;Test_17068138507200&#47;Dashboard1&#47;1.png'/>
+                   value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GG&#47;GGBQW3DCP&#47;1.png'/>
             <param name='animate_transition' value='yes'/>
             <param name='display_static_image' value='yes'/>
             <param name='display_spinner' value='yes'/>
@@ -34,7 +28,7 @@
             <param name='language' value='en-US'/>
         </object>
     </div>
-    <script type='text/javascript'>                    var divElement = document.getElementById('viz1706873771720');
+    <script type='text/javascript'>                    var divElement = document.getElementById('viz1706888262888');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if (divElement.offsetWidth > 800) {
         vizElement.style.width = '1000px';
@@ -50,5 +44,40 @@
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
+    <br>
+    <hr>
+    <h2>MatPlotlib graphs</h2>
+
+    {% if chart2 %}
+    <img src="data:img/png;base64, {{chart2|safe}}">
+    {% endif %}
+    <br>
+    {% if chart3 %}
+    <img src="data:img/png;base64, {{chart3|safe}}">
+    {% endif %}
+    <br>
+    <hr>
+    <h2>Basic Pandas</h2>
+    <h3>Describe</h3>
+    {{ describe | safe }}
+    <br>
+    <h3>Shape</h3>
+    {{ shape | safe }}
+    <h3>Columns</h3>
+    {{ columns | safe }}
+    <hr>
+    <h2>Head 50 of source data</h2>
+
+    {{ df_head | safe }}
+    <br>
+    <hr>
+
+    <!--    {% if chart %}-->
+    <!--    <img src="data:img/png;base64, {{chart|safe}}">-->
+    <!--    {% endif %}-->
+
+    <!--    <hr>-->
+
+</center>
 
 {% endblock content %}

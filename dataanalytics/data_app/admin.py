@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Car, Sale, Order, Person
 from import_export.admin import ImportExportModelAdmin
-from import_export import resources
 from .resource import OrderResource
 
 

@@ -19,12 +19,10 @@ class OrderResource(resources.ModelResource):
     )
 
     def before_import_row(self, row, **kwargs):
-        print(row)
-        # row['order_date'] = datetime.fromordinal(int(row['order_date'])) + timedelta(days=int(row['order_date']) % 1) - timedelta(days=366)
-        # row['ship_date'] = datetime.fromordinal(int(row['ship_date'])) + timedelta(days=int(row['ship_date']) % 1) - timedelta(days=366)
+        # print(row)
         row['order_date'] = datetime(1899, 12, 30) + timedelta(days=int(row['order_date']))
         row['ship_date'] = datetime(1899, 12, 30) + timedelta(days=int(row['ship_date']))
-        print(row)
+        # print(row)
 
     class Meta:
         model = Order

@@ -58,7 +58,6 @@ class Order(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=50)
     postal_code = models.IntegerField()
-    # region = models.ForeignKey(Person, on_delete=models.CASCADE)
     region = models.CharField(max_length=50)
     product_id = models.CharField(max_length=20)
     category = models.CharField(max_length=50)

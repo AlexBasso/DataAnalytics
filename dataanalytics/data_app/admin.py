@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Car, Sale, Order, Person
+from .models import Order, Person
 from import_export.admin import ImportExportModelAdmin
 from .resource import OrderResource
 
@@ -12,7 +12,5 @@ class PersonAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     pass
 
 
-admin.site.register(Car)
-admin.site.register(Sale)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Person, PersonAdmin)

@@ -2,24 +2,29 @@
 
 {% block title %} main {% endblock title %}
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 {% block content %}
 <center>
-    <h1>Tableau & Pandas & MatPlotlib Demo</h1>
     <br>
+    <h1>Tableau & Pandas & MatPlotlib Demo</h1>
     <hr>
     <h2>Tableau</h2>
 
-    <div class='tableauPlaceholder' id='viz1706888262888' style='position: relative'>
-        <noscript><a href='#'><img alt='Dashboard 1 '
-                                   src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GG&#47;GGBQW3DCP&#47;1_rss.png'
+    <div class='tableauPlaceholder' id='viz1707245814985' style='position: relative'>
+        <noscript><a href='#'><img alt='Dashboard '
+                                   src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Te&#47;Test_17068138507200&#47;Dashboard&#47;1_rss.png'
                                    style='border: none'/></a></noscript>
         <object class='tableauViz' style='display:none;'>
             <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
             <param name='embed_code_version' value='3'/>
-            <param name='path' value='shared&#47;GGBQW3DCP'/>
+            <param name='site_root' value=''/>
+            <param name='name' value='Test_17068138507200&#47;Dashboard'/>
+            <param name='tabs' value='no'/>
             <param name='toolbar' value='yes'/>
             <param name='static_image'
-                   value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;GG&#47;GGBQW3DCP&#47;1.png'/>
+                   value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Te&#47;Test_17068138507200&#47;Dashboard&#47;1.png'/>
             <param name='animate_transition' value='yes'/>
             <param name='display_static_image' value='yes'/>
             <param name='display_spinner' value='yes'/>
@@ -28,7 +33,7 @@
             <param name='language' value='en-US'/>
         </object>
     </div>
-    <script type='text/javascript'>                    var divElement = document.getElementById('viz1706888262888');
+    <script type='text/javascript'>                    var divElement = document.getElementById('viz1707245814985');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if (divElement.offsetWidth > 800) {
         vizElement.style.width = '1000px';
@@ -38,7 +43,7 @@
         vizElement.style.height = '827px';
     } else {
         vizElement.style.width = '100%';
-        vizElement.style.height = '727px';
+        vizElement.style.height = '1077px';
     }
     var scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
@@ -52,31 +57,90 @@
     <img src="data:img/png;base64, {{chart2|safe}}">
     {% endif %}
     <br>
+
+    <div class="text-format">
+        <b>Technology Leads Sales:</b> The Technology category outperforms Furniture and Office Supplies, indicating a
+        strong market demand for technology-related products. This balanced spread suggests a diversified product
+        portfolio, which is favorable for business stability.
+    </div>
+
+    <br>
+    {% if chart1 %}
+    <img src="data:img/png;base64, {{chart1|safe}}">
+    {% endif %}
+    <br>
+
+    <div class="text-format">
+        <b>Furniture's Profitability Concerns:</b> While Furniture sales are comparable to Technology and Office
+        Supplies, its
+        profitability lags significantly behind. This highlights the need to reassess the business strategy for the
+        Furniture category to improve profit margins, despite its current profitability.
+
+    </div>
+    <br>
     {% if chart3 %}
     <img src="data:img/png;base64, {{chart3|safe}}">
     {% endif %}
     <br>
-    <hr>
-    <h2>Basic Pandas</h2>
-    <h3>Describe</h3>
-    {{ describe | safe }}
+
+    <div class="text-format">
+        <b>Year-End Sales Spike:</b> A consistent trend over the four-year period is the surge in sales at the end of
+        each
+        year. However, March 2014 stands out as an outlier with exceptional sales performance, warranting further
+        investigation into the factors contributing to this success.
+    </div>
     <br>
-    <h3>Shape</h3>
-    {{ shape | safe }}
-    <h3>Columns</h3>
-    {{ columns | safe }}
-    <hr>
-    <h2>Head 50 of source data</h2>
+    {% if chart4 %}
+    <img src="data:img/png;base64, {{chart4|safe}}">
+    {% endif %}
+    <br>
 
-    {{ df_head | safe }}
+    <div class="text-format">
+        <b>Top Revenue Generators:</b> Phones and Chairs emerge as the top-selling items, followed by Storage, Tables,
+        Binders,
+        and Machines. Conversely, Fasteners and Labels account for a negligible portion of sales, suggesting potential
+        areas for optimization or phased-out products.
+    </div>
+    <br>
+    {% if chart5 %}
+    <img src="data:img/png;base64, {{chart5|safe}}">
+    {% endif %}
+    <br>
+
+    <div class="text-format">
+        <b>Profit Analysis:</b> Copiers yield the highest profits, despite their lower sales volume compared to Phones.
+        Conversely, Tables, Bookcases, and Supplies exhibit losses, signaling the need for strategic review and
+        potential adjustments to product offerings or pricing strategies.
+    </div>
+    <br>
+    {% if chart6 %}
+    <img src="data:img/png;base64, {{chart6|safe}}">
+    {% endif %}
+    <br>
+
+    <div class="text-format">
+        <b>Profitability Assessment:</b> The profit-to-sales ratio sheds light on the relative profitability of each
+        subcategory. While Labels may not contribute significantly to overall profits, their high profitability compared
+        to Copiers underscores the potential for increased focus on Labels, Papers, and Envelopes as lucrative business
+        avenues.
+    </div>
+
     <br>
     <hr>
+    Superstore Sales
+    <br>
+    <br>
+    Contains information about products, sales, and profits that you can use to identify key areas of improvement within
+    this fictitious company.
+    <br>
+    <br>
+    <a href="https://public.tableau.com/app/sample-data/sample_-_superstore.xls" class="btn btn-outline-primary">
+        Download xls
+    </a>
+    <br>
+    <hr>
+    <br>
 
-    <!--    {% if chart %}-->
-    <!--    <img src="data:img/png;base64, {{chart|safe}}">-->
-    <!--    {% endif %}-->
-
-    <!--    <hr>-->
 
 </center>
 

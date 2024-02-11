@@ -48,83 +48,120 @@
     var scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <br>
+
+    <div class="box-1">
+        <div class="text-format">
+            <b>This Tableau is interactive, click on plot elements and filters to get more in depth information.</b>
+        </div>
+    </div>
 
     <br>
     <hr>
     <h2>MatPlotlib graphs</h2>
 
-    {% if chart2 %}
-    <img src="data:img/png;base64, {{chart2|safe}}">
-    {% endif %}
-    <br>
+    <div class="box-1">
 
-    <div class="text-format">
-        <b>Technology Leads Sales:</b> The Technology category outperforms Furniture and Office Supplies, indicating a
-        strong market demand for technology-related products. This balanced spread suggests a diversified product
-        portfolio, which is favorable for business stability.
-    </div>
+        {% if chart2 %}
+        <img src="data:img/png;base64, {{chart2|safe}}">
+        {% endif %}
+        <br>
 
-    <br>
-    {% if chart1 %}
-    <img src="data:img/png;base64, {{chart1|safe}}">
-    {% endif %}
-    <br>
 
-    <div class="text-format">
-        <b>Furniture's Profitability Concerns:</b> While Furniture sales are comparable to Technology and Office
-        Supplies, its
-        profitability lags significantly behind. This highlights the need to reassess the business strategy for the
-        Furniture category to improve profit margins, despite its current profitability.
-
+        <div class="text-format">
+            <b>Technology Leads Sales:</b> The Technology category outperforms Furniture and Office Supplies, indicating
+            a
+            strong market demand for technology-related products. This balanced spread suggests a diversified product
+            portfolio, which is favorable for business stability.
+        </div>
     </div>
     <br>
-    {% if chart3 %}
-    <img src="data:img/png;base64, {{chart3|safe}}">
-    {% endif %}
     <br>
+    <div class="box-1">
+        {% if chart1 %}
+        <img src="data:img/png;base64, {{chart1|safe}}">
+        {% endif %}
+        <br>
 
-    <div class="text-format">
-        <b>Year-End Sales Spike:</b> A consistent trend over the four-year period is the surge in sales at the end of
-        each
-        year. However, March 2014 stands out as an outlier with exceptional sales performance, warranting further
-        investigation into the factors contributing to this success.
+
+        <div class="text-format">
+            <b>Furniture's Profitability Concerns:</b> While Furniture sales are comparable to Technology and Office
+            Supplies, its
+            profitability lags significantly behind. This highlights the need to reassess the business strategy for the
+            Furniture category to improve profit margins, despite its current profitability.
+
+        </div>
     </div>
     <br>
-    {% if chart4 %}
-    <img src="data:img/png;base64, {{chart4|safe}}">
-    {% endif %}
     <br>
+    <div>
+        {% if chart3 %}
+        <img src="data:img/png;base64, {{chart3|safe}}">
+        {% endif %}
+        <br>
 
-    <div class="text-format">
-        <b>Top Revenue Generators:</b> Phones and Chairs emerge as the top-selling items, followed by Storage, Tables,
-        Binders,
-        and Machines. Conversely, Fasteners and Labels account for a negligible portion of sales, suggesting potential
-        areas for optimization or phased-out products.
+
+        <div class="text-format box-1">
+            <b>Year-End Sales Spike:</b> A consistent trend over the four-year period is the surge in sales at the end
+            of
+            each
+            year. However, March 2014 stands out as an outlier with exceptional sales performance, warranting further
+            investigation into the factors contributing to this success.
+        </div>
     </div>
     <br>
-    {% if chart5 %}
-    <img src="data:img/png;base64, {{chart5|safe}}">
-    {% endif %}
     <br>
+    <div class="box-1">
+        {% if chart4 %}
+        <img src="data:img/png;base64, {{chart4|safe}}">
+        {% endif %}
+        <br>
 
-    <div class="text-format">
-        <b>Profit Analysis:</b> Copiers yield the highest profits, despite their lower sales volume compared to Phones.
-        Conversely, Tables, Bookcases, and Supplies exhibit losses, signaling the need for strategic review and
-        potential adjustments to product offerings or pricing strategies.
+
+        <div class="text-format">
+            <b>Top Revenue Generators:</b> Phones and Chairs emerge as the top-selling items, followed by Storage,
+            Tables,
+            Binders,
+            and Machines. Conversely, Fasteners and Labels account for a negligible portion of sales, suggesting
+            potential
+            areas for optimization or phased-out products.
+        </div>
     </div>
     <br>
-    {% if chart6 %}
-    <img src="data:img/png;base64, {{chart6|safe}}">
-    {% endif %}
     <br>
+    <div class="box-1">
+        {% if chart5 %}
+        <img src="data:img/png;base64, {{chart5|safe}}">
+        {% endif %}
+        <br>
 
-    <div class="text-format">
-        <b>Profitability Assessment:</b> The profit-to-sales ratio sheds light on the relative profitability of each
-        subcategory. While Labels may not contribute significantly to overall profits, their high profitability compared
-        to Copiers underscores the potential for increased focus on Labels, Papers, and Envelopes as lucrative business
-        avenues.
+
+        <div class="text-format">
+            <b>Profit Analysis:</b> Copiers yield the highest profits, despite their lower sales volume compared to
+            Phones.
+            Conversely, Tables, Bookcases, and Supplies exhibit losses, signaling the need for strategic review and
+            potential adjustments to product offerings or pricing strategies.
+        </div>
     </div>
+    <br>
+    <br>
+    <div class="box-1">
+        {% if chart6 %}
+        <img src="data:img/png;base64, {{chart6|safe}}">
+        {% endif %}
+        <br>
 
+
+        <div class="text-format">
+            <b>Profitability Assessment:</b> The profit-to-sales ratio sheds light on the relative profitability of each
+            subcategory. While Labels may not contribute significantly to overall profits, their high profitability
+            compared
+            to Copiers underscores the potential for increased focus on Labels, Papers, and Envelopes as lucrative
+            business
+            avenues.
+        </div>
+    </div>
+    <br>
     <br>
     <hr>
     Superstore Sales

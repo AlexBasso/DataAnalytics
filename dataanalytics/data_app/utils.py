@@ -53,23 +53,6 @@ def get_plot1(x, y):
     return graph
 
 
-# def get_plot2(x, y):
-#     plt.switch_backend('AGG')
-#     plt.figure(figsize=(10, 2.3))
-#     x.reverse()
-#     y.reverse()
-#     plt.barh(x, y, color='skyblue', height=0.5)
-#
-#     plt.xlabel('Sum of Sales')
-#     plt.ylabel('Product type')
-#     plt.title('Average Sales by Item \n')
-#     plt.xticks(rotation=45)
-#     plt.tight_layout()
-#
-#     graph = get_graph()
-#     return graph
-
-
 def get_plot2(x, y):
     plt.switch_backend('AGG')
     plt.figure(figsize=(10, 2.3))
@@ -96,6 +79,7 @@ def get_plot2(x, y):
 
 def get_plot3(sales_by_year_month):
     plt.switch_backend('AGG')
+
     fig, axs = plt.subplots(nrows=2, ncols=2, figsize=(12, 8))
     fig.suptitle('Sales by Year and Month \n')
 
@@ -123,7 +107,7 @@ def get_plot4(sub_cat_sales):
     labels_with_percentages = [f'{label} ' for label, percent in zip(sub_cat_sales.index, percentages)]
 
     plt.switch_backend('AGG')
-    plt.figure(figsize=(12, 8))
+    plt.figure(figsize=(10, 8))
     plt.title('Sales by Sub-Category \n')
 
     plt.pie(sub_cat_sales, labels=sub_cat_sales.index, autopct='%1.1f%%', startangle=140)
@@ -142,7 +126,7 @@ def get_plot5(sub_cat_profit):
     sub_cat_profit_sorted = sub_cat_profit.sort_values()
 
     plt.switch_backend('AGG')
-    plt.figure(figsize=(12, 8))
+    plt.figure(figsize=(10, 8))
 
     sub_cat_profit_sorted.plot(kind='barh', color=['green' if profit >= 0 else 'red' for profit in sub_cat_profit_sorted],
                               legend=False)
